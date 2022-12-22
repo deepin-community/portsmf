@@ -1,0 +1,5 @@
+usr/include
+usr/lib/*/libportSMF.a
+usr/lib/*/libportSMF.so
+usr/lib/*/pkgconfig
+usr/share/doc/portsmf/README.txt usr/share/doc/portsmf-dev

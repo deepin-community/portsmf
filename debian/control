@@ -1,0 +1,56 @@
+Source: portsmf
+Section: libs
+Priority: optional
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Uploaders: Benjamin Drung <bdrung@debian.org>
+Build-Depends: debhelper-compat (= 9), dh-autoreconf
+Standards-Version: 3.9.8
+Homepage: http://portmedia.sourceforge.net/
+Vcs-Browser: https://salsa.debian.org/multimedia-team/portsmf
+Vcs-Git: https://salsa.debian.org/multimedia-team/portsmf.git
+
+Package: libportsmf0
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Portable Standard Midi File Library
+ Portsmf is "Port Standard MIDI File", a cross-platform, C++ library for reading
+ and writing Standard MIDI Files.
+ .
+ Features:
+ .
+  - input and output of Standard MIDI Files
+  - data structures, classes, etc. for representing music data in memory
+    o sequence structure consisting of multiple tracks
+    o track structure consisting of multiple events
+    o events contain note and control data
+    o extensible attribute-value property lists
+    o tempo track and time signature representation
+  - input and output of a text-based representation: Allegro files
+  - extensive editing operations on sequences and tracks
+  - conversion to/from binary buffers for archiving, undo/redo, etc.
+
+Package: libportsmf-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libportsmf0 (= ${binary:Version}), ${misc:Depends}
+Description: Portable Standard Midi File Library (development files)
+ Portsmf is "Port Standard MIDI File", a cross-platform, C++ library for reading
+ and writing Standard MIDI Files.
+ .
+ Features:
+ .
+  - input and output of Standard MIDI Files
+  - data structures, classes, etc. for representing music data in memory
+    o sequence structure consisting of multiple tracks
+    o track structure consisting of multiple events
+    o events contain note and control data
+    o extensible attribute-value property lists
+    o tempo track and time signature representation
+  - input and output of a text-based representation: Allegro files
+  - extensive editing operations on sequences and tracks
+  - conversion to/from binary buffers for archiving, undo/redo, etc.
+ .
+ This package contains the development files.

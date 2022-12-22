@@ -1,0 +1,29 @@
+Description: Add libtool support for .so file creation.
+Author: Benjamin Drung <bdrung@debian.org>
+
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -6,10 +6,10 @@
+ ACLOCAL_AMFLAGS = -I autotools/m4
+ 
+ # define the output library (link with -lportSMF)
+-lib_LIBRARIES = libportSMF.a
++lib_LTLIBRARIES = libportSMF.la
+ 
+ # define the source files to use
+-libportSMF_a_SOURCES = allegro.cpp \
++libportSMF_la_SOURCES = allegro.cpp \
+ 	allegrosmfwr.cpp \
+ 	allegrord.cpp \
+ 	allegrowr.cpp \
+--- a/configure.ac
++++ b/configure.ac
+@@ -51,6 +51,8 @@
+ dnl and ranlib for static libraries
+ AC_PROG_RANLIB
+ 
++AC_PROG_LIBTOOL
++
+ dnl Make the install prefix available to the program so that the pkg-config file
+ dnl can be created correctly
+ AC_PREFIX_DEFAULT(/usr/local)

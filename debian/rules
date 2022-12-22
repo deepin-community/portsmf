@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@ --with autoreconf
+
+DEB_SOURCE := $(shell dpkg-parsechangelog | sed -n 's/^Source: //p')
+UPSTREAM_VERSION := $(shell dpkg-parsechangelog | sed -n 's/^Version: //p' | sed 's/-[^-]*$$//')
+DIR := $(DEB_SOURCE)-$(UPSTREAM_VERSION)
+DATE := $(shell echo $(UPSTREAM_VERSION) | sed 's/^.*svn//')
+
+get-orig-source:
+	rm -rf /tmp/$(DIR)
+	svn export -r {$(DATE)} https://portmedia.svn.sourceforge.net/svnroot/portmedia/portsmf/trunk /tmp/$(DIR)
+	fromdos $(shell find /tmp/$(DIR) -type f)
+	tar -c -C /tmp $(DIR) | bzip2 -c9 > ../$(DEB_SOURCE)_$(UPSTREAM_VERSION).orig.tar.bz2

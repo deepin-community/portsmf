@@ -1,0 +1,56 @@
+portsmf (0.1~svn20101010-6) UNRELEASED; urgency=medium
+
+  * update
+
+ -- Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>  Mon, 16 May 2022 20:22:40 +0800
+
+portsmf (0.1~svn20101010-6) unstable; urgency=medium
+
+  * Team upload.
+  * Rebuild package after Debian 11 release.
+  * debian/control:
+    + Update maintainer team email address.
+    + Update Vcs-* fields to use Debian Salsa GitLab.
+    + Use debhelper-compat instead of debian/compat.
+
+ -- Boyuan Yang <byang@debian.org>  Sun, 15 Aug 2021 11:14:13 -0400
+
+portsmf (0.1~svn20101010-5) unstable; urgency=medium
+
+  * Fix bad pkg-config directive
+  * Update Vcs links to point to https URLs
+  * Bump Standards-Version to 3.9.8 (no changes needed)
+  * Update debian/copyright to copyright format 1.0
+  * Enable all hardening flags
+
+ -- Benjamin Drung <bdrung@debian.org>  Sun, 25 Dec 2016 17:56:40 +0100
+
+portsmf (0.1~svn20101010-4) unstable; urgency=low
+
+  * Switch to debhelper 9 and enable multi-arch.
+  * Use canonical URLs for Vcs fields.
+  * Bump Standards-Version to 3.9.4 (no changes needed).
+
+ -- Benjamin Drung <bdrung@debian.org>  Thu, 21 Mar 2013 15:17:21 +0100
+
+portsmf (0.1~svn20101010-3) unstable; urgency=low
+
+  * Drop libportsmf0 symbols file again due to different symbols on different
+    architectures.
+
+ -- Benjamin Drung <bdrung@debian.org>  Mon, 18 Apr 2011 00:37:08 +0200
+
+portsmf (0.1~svn20101010-2) unstable; urgency=low
+
+  * Put header files into portSMF subdirectory to avoid name clashes.
+    (Closes: #621873)
+  * Bump Standards-Version to 3.9.2 (no changes required).
+  * Add symbols file to libportsmf0.
+
+ -- Benjamin Drung <bdrung@debian.org>  Sun, 17 Apr 2011 19:30:55 +0200
+
+portsmf (0.1~svn20101010-1) unstable; urgency=low
+
+  * Initial release (Closes: #613306).
+
+ -- Benjamin Drung <bdrung@debian.org>  Mon, 14 Feb 2011 00:29:44 +0100

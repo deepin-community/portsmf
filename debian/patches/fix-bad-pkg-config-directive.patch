@@ -1,0 +1,18 @@
+Description: Fix bad pkg-config directive
+ portsmf adds its CXXFLAGS flags to the pkg-config cflags directive. This
+ leaks its private compile flags to another package and could lead to
+ build failures.
+ .
+ On Debian the flags "-g -O2 -fstack-protector-strong -Wformat
+ -Werror=format-security -Wall" are leaked and cause lintian to
+ complain.
+Author: Benjamin Drung <bdrung@debian.org>
+
+--- a/portSMF.pc.in
++++ b/portSMF.pc.in
+@@ -7,4 +7,4 @@
+ Version: 0.1
+ 
+ Libs: -L${libdir} -lportSMF @LIBS@
+-Cflags: -I${includedir} @CXXFLAGS@
++Cflags: -I${includedir}

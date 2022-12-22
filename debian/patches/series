@@ -1,0 +1,4 @@
+fix-bad-pkg-config-directive.patch
+libtool-support.patch
+pkgconfig-file.patch
+header-in-subdirectory.patch

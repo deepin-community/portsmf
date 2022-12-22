@@ -1,0 +1,24 @@
+Description: Put header files into portSMF subdirectory to avoid name clashes.
+Author: Benjamin Drung <bdrung@debian.org>
+Bug-Debian: http://bugs.debian.org/621873
+
+--- a/portSMF.pc.in
++++ b/portSMF.pc.in
+@@ -9,4 +9,4 @@
+ Version: 0.1
+ 
+ Libs: -L${libdir} -lportSMF @LIBS@
+-Cflags: -I${includedir}
++Cflags: -I${includedir}/portSMF
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -24,7 +24,8 @@
+ # but that would mean re-organising them here (a subdirectory called portSMF to
+ # keep headers in, add -I$(srcdir)/portSMF/ to AM_CXXFLAGS, change the paths
+ # to the headers here and change the name of the variable to nobase_include_...
+-include_HEADERS = allegro.h \
++library_includedir = $(includedir)/portSMF
++library_include_HEADERS = allegro.h \
+ 	mfmidi.h \
+ 	strparse.h \
+ 	trace.h
